@@ -19,4 +19,4 @@ def can_access(user: User, invoice: Invoice) -> bool:
     if user.is_admin:
         return True
     # owner match
-    return user.id != invoice.owner_id
+    return user.id == invoice.owner_id
