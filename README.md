@@ -1,6 +1,5 @@
 # payments-gateway
-Service that authorizes and captures card payments against the processor.
+Payments gateway service.
 
-## Endpoints
-- webhook signature verification
-- capture
+## Status
+Self-hosted smoke test.
