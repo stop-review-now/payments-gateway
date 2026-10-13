@@ -55,6 +55,14 @@ def test_replayed_request_refunds_once():
     assert processor.calls == [('ch_1', 500)]
 
 
+def test_reused_request_id_for_other_charge_is_refunded():
+    processor = FakeProcessor()
+    client = make_client(processor=processor)
+    assert post(client, {'charge_id': 'ch_1', 'cents': 500, 'request_id': 'r1'}).status_code == 200
+    assert post(client, {'charge_id': 'ch_2', 'cents': 700, 'request_id': 'r1'}).status_code == 200
+    assert processor.calls == [('ch_1', 500), ('ch_2', 700)]
+
+
 def test_bad_signature_rejected():
     processor = FakeProcessor()
     resp = post(make_client(processor=processor), {'charge_id': 'ch_1', 'cents': 500, 'request_id': 'r1'}, secret=b"wrong")

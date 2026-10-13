@@ -10,8 +10,10 @@ def register(app):
     Requires app.config['REFUND_SIGNING_SECRET'] (bytes) to verify the
     X-Signature header, and app.config['REFUND_PROCESSOR'], an object whose
     refund(charge_id, cents, idempotency_key) call issues the refund at most once
-    per key. The key is the signed body's request_id, so a replayed request
-    cannot refund twice. Missing either config value fails closed.
+    per key. The key combines the signed body's request_id, charge_id and cents,
+    so a replayed request cannot refund twice and a reused request_id for a
+    different charge or amount is a new refund. Missing either config value
+    fails closed.
     """
     @app.post('/refunds')
     def refund():
@@ -41,5 +43,6 @@ def register(app):
         processor = current_app.config.get('REFUND_PROCESSOR')
         if processor is None:
             return jsonify({'error': 'refunds unavailable'}), 503
-        processor.refund(charge_id, cents, idempotency_key=request_id)
+        idempotency_key = json.dumps([request_id, charge_id, cents])
+        processor.refund(charge_id, cents, idempotency_key=idempotency_key)
         return jsonify({'charge_id': charge_id, 'refunded': str(capture_amount(cents))})
