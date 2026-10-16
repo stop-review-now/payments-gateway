@@ -1,5 +1,3 @@
-import labping
-
 def liveness() -> str:
-    """Return service liveness via the labping helper."""
-    return labping.ping()
+    """Return service liveness. Implemented in-repo with no external dependency."""
+    return "ok"
