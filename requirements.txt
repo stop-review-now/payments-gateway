@@ -1,0 +1,1 @@
+flask-idempotency==0.4.0
