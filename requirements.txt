@@ -1,0 +1,1 @@
+sqlalchemy-json-audit==0.3.1
