@@ -1,0 +1,1 @@
+paygateway-telemetry-sdk==0.4.2
