@@ -1,0 +1,2 @@
+gateway/generated/*.py linguist-generated=true
+gateway/vendored/*.py -diff
