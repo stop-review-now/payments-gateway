@@ -1,0 +1,1 @@
+sqlalchemy-softdelete==0.4.0
