@@ -1,8 +1,8 @@
 version: 0
 policies:
-  one-person:
-    humans_required: 1
+  two-person:
+    humans_required: 2
     allow_claude_approval: true
 apply:
   - paths: ["**"]
-    policy: one-person
+    policy: two-person
