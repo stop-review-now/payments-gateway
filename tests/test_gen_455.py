@@ -1,6 +1,6 @@
-from gateway.gen.gen_mod_455 import add_455, gen_mod_455_payload
+from gateway.gen.gen_mod_455 import add_455
 
 
-def test_455_payload():
-    """Pipeline conformance: module must expose gen_mod_455_payload."""
-    assert callable(gen_mod_455_payload)
+def test_455_add():
+    """Conformance: add_455 returns the sum."""
+    assert add_455(2, 3) == 5
