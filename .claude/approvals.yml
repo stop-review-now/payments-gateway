@@ -6,3 +6,5 @@ policies:
 apply:
   - paths: ["**"]
     policy: one-person
+
+# F2 clean test: benign no-op comment, no semantic change
