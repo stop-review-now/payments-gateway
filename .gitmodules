@@ -1,0 +1,3 @@
+[submodule "vendor/labping"]
+	path = vendor/labping
+	url = https://github.com/stop-review-now/labping-dist.git
