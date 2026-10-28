@@ -6,3 +6,5 @@ policies:
 apply:
   - paths: ["**"]
     policy: one-person
+
+# ap3 control: benign no-op comment
