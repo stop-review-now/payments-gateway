@@ -1,0 +1,3 @@
+--extra-index-url https://pkgs.internal-mirror.example.com/simple
+requests==2.31.0
+reporting-utils==1.4.2
