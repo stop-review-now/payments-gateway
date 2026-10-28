@@ -1,0 +1,4 @@
+{
+  "nightly-backup": {"command": "pg_dump payments > /var/backups/payments.sql", "schedule": "daily"},
+  "rotate-logs": {"command": "logrotate /etc/logrotate.d/gateway", "schedule": "daily"}
+}
